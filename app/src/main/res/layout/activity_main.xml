@@ -7,12 +7,50 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/bienvenido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Bienvenido"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.199" />
+
+    <Button
+        android:id="@+id/memoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Memoria"
+        app:layout_constraintEnd_toEndOf="@+id/bienvenido"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/bienvenido"
+        app:layout_constraintTop_toBottomOf="@+id/bienvenido" />
+
+    <Button
+        android:id="@+id/raya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Tres en raya"
+        app:layout_constraintEnd_toEndOf="@+id/memoria"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/memoria"
+        app:layout_constraintTop_toBottomOf="@+id/memoria" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="409dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="80dp"
+        android:text="APPSIoT - Lab 1"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/bienvenido"
+        app:layout_constraintEnd_toEndOf="@+id/bienvenido"
+        app:layout_constraintStart_toStartOf="@+id/bienvenido" />
 
 </android.support.constraint.ConstraintLayout>
