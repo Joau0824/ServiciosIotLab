@@ -25,7 +25,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
     int estado = 10; //-1 -> gana x; 1 -> gana O; 0 -> empate
     int fichas = 0;
     int turno = 1; //quien coloco la ultima ficha
-    int[] gana = new int[]{-1,-1,-1}; //array de enteros, que conteiene las posiciones de la juagada ganadora
+    int[] gana = new int[]{-1,-1,-1}; //array de enteros, que conteiene las posiciones de la jugada ganadora
 
     public ArrayList<String> estadisticasTresEnRaya = new ArrayList();
 
@@ -62,9 +62,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         System.out.println("aqui van los botones vacios" + buttons );
         System.out.println("aqui van los tablero vacio" + tablero );
 
-        estado = 0; //veremos que -1 cuando gana x
-        //1 cunado gana el o
-        //0 cuando hay empate
+        estado = 0;
         fichas = 0;
         turno = 1; //indica quien coloco la ultima ficha,para determinar el ganador
         gana = new int[]{-1,-1,-1}; //array de enteros, que contiene las posiciones de la juagada ganadora
