@@ -13,10 +13,10 @@ import java.util.Arrays;
 
 public class MainActivityTresEnRaya extends AppCompatActivity {
 
-    TextView WinnerText;
-    Integer[] buttons; //array de enteros
+    //TextView WinnerText;
+    //Integer[] buttons; //array de enteros
 
-    int[] tablero = new int[]{ //array de enteros
+    /*int[] tablero = new int[]{ //array de enteros
             0, 0, 0,
             0, 0, 0,
             0, 0, 0,
@@ -27,7 +27,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
     int turno = 1; //quien coloco la ultima ficha
     int[] gana = new int[]{-1,-1,-1}; //array de enteros, que conteiene las posiciones de la juagada ganadora
 
-    public ArrayList<String> estadisticasTresEnRaya = new ArrayList();
+    public ArrayList<String> estadisticasTresEnRaya = new ArrayList();*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         setContentView(R.layout.activity_main_tres_en_raya);
         getSupportActionBar().setTitle("Inicio");
 
-        WinnerText = (TextView) findViewById(R.id.WinnerText);
-        WinnerText.setVisibility(View.INVISIBLE);
+        //WinnerText = (TextView) findViewById(R.id.WinnerText);
+        //WinnerText.setVisibility(View.INVISIBLE);
 
-        buttons = new Integer[]{
+        /*buttons = new Integer[]{
                 R.id.b1, R.id.b2, R.id.b3,
                 R.id.b4, R.id.b5, R.id.b6,
                 R.id.b7, R.id.b8, R.id.b9,
@@ -48,7 +48,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         int i = intent.getIntExtra("nuevoJuego",0);
         if (i == 1) {
             rebootGame();
-        }
+        }*/
 
         //Descomentar para ver un ejemplo de cómo se verian las estadisticas
 //        estadisticasTic.add("Juego 1 : Ganó X");
@@ -57,7 +57,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
 //        estadisticasTic.add("Juego 4 : Empate");
     }
 
-    public void selectficha(View view){
+    /*public void selectficha(View view){
         Button button = (Button) view;
         if(estado == 0){ //jugando
 
@@ -237,6 +237,6 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityTresEnRayaEstadisticas.class);
         intent.putExtra("estadisticas", estadisticasTresEnRaya);
         startActivity(intent);
-    }
+    }*/
 
 }

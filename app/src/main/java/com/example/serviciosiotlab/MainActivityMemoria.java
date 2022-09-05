@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,10 +15,9 @@ public class MainActivityMemoria extends AppCompatActivity {
     Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
     Button[] tablero = new Button[16];
     Button botonNuevo;
-    int[] imagenes;
-    //letras
+    String[] letras;
     //varibales
-    ArrayList<String> letrasdesordenadas;
+    //ArrayList<Integer> letrasdesordenadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,15 +75,20 @@ public class MainActivityMemoria extends AppCompatActivity {
     }
 
     private void cargarletras(){
-        imagenes=new int[]{
-               R.drawable.ic_action_A
-        };
     }
 
-
+    private ArrayList<Integer> barajar(int longitud){
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for(int i=0; i<longitud*2; i++){
+            result.add(i % longitud);
+        }
+        Collections.shuffle(result);
+       return result;
+    }
 
     private void iniciar(){
         cargarTablero();
         cargarBotones();
+        cargarletras();
     }
 }

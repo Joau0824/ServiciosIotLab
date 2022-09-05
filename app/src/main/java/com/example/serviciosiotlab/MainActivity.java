@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openTresEnRaya (View view){
-        Intent intent = new Intent(this, MainActivityTresEnRaya.class);
-        startActivity(intent);
+    public void openTresEnRaya (View view1){
+        Intent intent1 = new Intent(this, MainActivityTresEnRaya.class);
+        startActivity(intent1);
     }
 }
