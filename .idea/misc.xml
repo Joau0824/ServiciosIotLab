@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/drawable-anydpi/ic_action_A.xml" value="0.142" />
+        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/drawable-anydpi/ic_action_B.xml" value="0.142" />
+        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/drawable-anydpi/ic_action_C.xml" value="0.142" />
         <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main2.xml" value="0.22" />
         <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main_inicio.xml" value="0.33" />
