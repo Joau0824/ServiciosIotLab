@@ -148,7 +148,7 @@ public class MainActivityMemoria extends AppCompatActivity {
                         String estadisticas = "Juego " + (memoriaEstadistica.size() + 1) + " : " + tiempoJuego;
                         memoriaEstadistica.add(estadisticas);
 
-                        TextView cronometro = (TextView) findViewById(R.id.mostrarTiempo);
+                        TextView cronometro = (TextView) findViewById(R.id.timer);
                         cronometro.setText(tiempoJuego);
                     }
                 }
