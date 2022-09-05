@@ -66,9 +66,12 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="282dp">
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
             android:id="@+id/b4"
@@ -111,12 +114,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitulo"
-        app:layout_constraintVertical_bias="0.666">
+        app:layout_constraintEnd_toEndOf="@+id/textTitulo"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/textTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/textTitulo">
 
         <Button
             android:id="@+id/b1"
@@ -164,10 +167,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_nuevoTic"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="59dp">
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Button
             android:id="@+id/b7"

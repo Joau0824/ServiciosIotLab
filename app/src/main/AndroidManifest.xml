@@ -14,6 +14,18 @@
         android:theme="@style/Theme.ServiciosIotLab"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityMemoriaEstadisticas"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ActivityTresEnRayaEstadisticas"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MainActivityTresEnRaya"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".MainActivityMemoria"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
