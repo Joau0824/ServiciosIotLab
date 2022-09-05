@@ -26,13 +26,14 @@
 
     <Button
         android:id="@+id/btn_memoria"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
+        android:layout_width="189dp"
+        android:layout_height="67dp"
         android:layout_marginTop="160dp"
         android:backgroundTint="#916AD6"
         android:fontFamily="casual"
         android:text="Memoria"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/bienvenido"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="@+id/bienvenido"
@@ -40,16 +41,19 @@
 
     <Button
         android:id="@+id/btn_tresenraya"
-        android:layout_width="153dp"
-        android:layout_height="45dp"
+        android:layout_width="189dp"
+        android:layout_height="61dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="#916AD6"
         android:fontFamily="casual"
         android:text="Tres en raya"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_memoria"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/btn_memoria"
-        app:layout_constraintTop_toBottomOf="@+id/btn_memoria" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_memoria"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
