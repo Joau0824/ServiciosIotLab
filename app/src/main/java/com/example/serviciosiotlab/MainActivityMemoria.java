@@ -1,21 +1,29 @@
 package com.example.serviciosiotlab;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class MainActivityMemoria extends AppCompatActivity {
 
-    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
-    Button[] tablero = new Button[16];
-    Button botonNuevo;
-    String[] letras;
+   public ArrayList<String> memoriaEstadistica = new ArrayList<>();
+   private ArrayList<Button> presionarBotones = new ArrayList<>();
+   private final int[] botones = {R.id.btna1,R.id.btnb1,R.id.btnc1,R.id.btnd1,R.id.btna2,R.id.btnb2,R.id.btnc2,R.id.btnd2,R.id.btna3,R.id.btnb3,R.id.btnc3,R.id.btnd3,R.id.btna4,R.id.btnb4,R.id.btnc4,R.id.btnd4};
+   private int contador;
+    private HashMap<Button,String> letraBoton = new HashMap<>();
+   private Instant instantInicio, instantFin;
+
     //varibales
     //ArrayList<Integer> letrasdesordenadas;
 
@@ -23,72 +31,102 @@ public class MainActivityMemoria extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_memoria);
-        iniciar();
-    }
-    private void cargarTablero(){
-        btn1 = findViewById(R.id.btna1);
-        btn2 = findViewById(R.id.btnb1);
-        btn3 = findViewById(R.id.btnc1);
-        btn4 = findViewById(R.id.btnd1);
+        getSupportActionBar().setTitle("Inicio");
+        Intent intent = getIntent();
+        int i = intent.getIntExtra("Nuevo Inicio",0);
+        if (i == 1) {
+            cargarletras();
+        }
 
-        btn5 = findViewById(R.id.btna2);
-        btn6 = findViewById(R.id.btnb2);
-        btn7 = findViewById(R.id.btnc2);
-        btn8 = findViewById(R.id.btnd2);
-
-        btn9 = findViewById(R.id.btna3);
-        btn10 = findViewById(R.id.btnb3);
-        btn11 = findViewById(R.id.btnc3);
-        btn12 = findViewById(R.id.btnd3);
-
-        btn13 = findViewById(R.id.btna4);
-        btn14 = findViewById(R.id.btnb4);
-        btn15 = findViewById(R.id.btnc4);
-        btn16 = findViewById(R.id.btnd4);
-
-        tablero[0]=btn1;
-        tablero[1]=btn2;
-        tablero[2]=btn3;
-        tablero[3]=btn4;
-        tablero[4]=btn5;
-        tablero[5]=btn6;
-        tablero[6]=btn7;
-        tablero[7]=btn8;
-        tablero[8]=btn9;
-        tablero[9]=btn10;
-        tablero[10]=btn11;
-        tablero[11]=btn12;
-        tablero[12]=btn13;
-        tablero[13]=btn14;
-        tablero[14]=btn15;
-        tablero[15]=btn16;
-    }
-
-    private void cargarBotones(){
-        botonNuevo=findViewById(R.id.btn_nuevoMem3);
-        botonNuevo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                iniciar();
-            }
-        });
     }
 
     private void cargarletras(){
-    }
 
-    private ArrayList<Integer> barajar(int longitud){
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        for(int i=0; i<longitud*2; i++){
-            result.add(i % longitud);
+        ArrayList<String> letras = new ArrayList<>();
+        letras.add("A");
+        letras.add("B");
+        letras.add("C");
+        letras.add("D");
+        letras.add("E");
+        letras.add("F");
+        letras.add("G");
+        letras.add("H");
+
+        contador=0;
+        presionarBotones.clear();
+        letraBoton.clear();;
+
+        ArrayList<String> letras1 = new ArrayList<>();
+        for (String letras2 : letras ){
+            letras1.add(letras2);
+            letras1.add(letras2);
         }
-        Collections.shuffle(result);
-       return result;
+
+        Collections.shuffle(letras1);
+
+        for(int i=0; i<botones.length; i++){
+            Button boton = (Button) findViewById(botones[i]);
+            letraBoton.put(boton,letras1.get(i));
+            boton.setText(String.valueOf(letras1.get(i)));
+        }
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                cargarBotones();
+            }
+        }, 1000);
+
     }
 
-    private void iniciar(){
-        cargarTablero();
-        cargarBotones();
-        cargarletras();
+    private void cargarBotones(){
+        for(int i=0;i<botones.length;i++){
+            Button boton = (Button) findViewById(botones[i]);
+            boton.setText("-");
+        }
+    }
+
+    public void colocarletra(View view) {
+
+        if (contador < 2) {
+            Button boton1 = (Button) view;
+            String letraBTN = letraBoton.get(boton1);
+
+            if (letraBoton == null) {
+                presionarBotones.get(0).setText("-");
+            } else {
+                presionarBotones.add(boton1);
+                boton1.setText(String.valueOf(letraBTN));
+                contador++;
+
+                if (presionarBotones.size() == 2) {
+
+                    if (presionarBotones.get(0).getId() != presionarBotones.get(1).getId()) {
+                        String letraA = letraBoton.get(presionarBotones.get(0));
+                        String letraB = letraBoton.get(presionarBotones.get(1));
+
+                        if (letraA.equalsIgnoreCase(letraB)) {
+                            // Pares Iguales
+                            letraBoton.remove(presionarBotones.get(0));
+                            letraBoton.remove(presionarBotones.get(1));
+
+                        } else {
+                            // Pares Diferentes
+                            Button boton1A = presionarBotones.get(0);
+                            Button boton1B = presionarBotones.get(1);
+
+                            Handler handler1 = new Handler();
+                            handler1.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    boton1A.setText("-");
+                                    boton1B.setText("-");
+                                }
+                            }, 500);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
