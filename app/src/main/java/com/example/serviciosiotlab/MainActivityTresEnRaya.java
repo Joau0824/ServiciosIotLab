@@ -13,10 +13,10 @@ import java.util.Arrays;
 
 public class MainActivityTresEnRaya extends AppCompatActivity {
 
-    //TextView WinnerText;
-    //Integer[] buttons; //array de enteros
+    TextView WinnerText;
+    Integer[] buttons; //array de enteros
 
-    /*int[] tablero = new int[]{ //array de enteros
+    int[] tablero = new int[]{ //array de enteros
             0, 0, 0,
             0, 0, 0,
             0, 0, 0,
@@ -27,7 +27,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
     int turno = 1; //quien coloco la ultima ficha
     int[] gana = new int[]{-1,-1,-1}; //array de enteros, que conteiene las posiciones de la juagada ganadora
 
-    public ArrayList<String> estadisticasTresEnRaya = new ArrayList();*/
+    public ArrayList<String> estadisticasTresEnRaya = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         setContentView(R.layout.activity_main_tres_en_raya);
         getSupportActionBar().setTitle("Inicio");
 
-        //WinnerText = (TextView) findViewById(R.id.WinnerText);
-        //WinnerText.setVisibility(View.INVISIBLE);
+        WinnerText = (TextView) findViewById(R.id.WinnerText);
+        WinnerText.setVisibility(View.INVISIBLE);
 
-        /*buttons = new Integer[]{
+        buttons = new Integer[]{
                 R.id.b1, R.id.b2, R.id.b3,
                 R.id.b4, R.id.b5, R.id.b6,
                 R.id.b7, R.id.b8, R.id.b9,
@@ -47,17 +47,52 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         Intent intent = getIntent();
         int i = intent.getIntExtra("nuevoJuego",0);
         if (i == 1) {
-            rebootGame();
-        }*/
+            reiniciar();
+        }
 
-        //Descomentar para ver un ejemplo de cómo se verian las estadisticas
-//        estadisticasTic.add("Juego 1 : Ganó X");
-//        estadisticasTic.add("Juego 2 : Canceló");
-//        estadisticasTic.add("Juego 3 : Ganó O");
-//        estadisticasTic.add("Juego 4 : Empate");
     }
 
-    /*public void selectficha(View view){
+    public void reiniciar() {
+        tablero = new int[]{
+                0, 0, 0,
+                0, 0, 0,
+                0, 0, 0,
+        };
+
+        System.out.println("aqui van los botones vacios" + buttons );
+        System.out.println("aqui van los tablero vacio" + tablero );
+
+        estado = 0; //veremos que -1 cuando gana x
+        //1 cunado gana el o
+        //0 cuando hay empate
+        fichas = 0;
+        turno = 1; //indica quien coloco la ultima ficha,para determinar el ganador
+        gana = new int[]{-1,-1,-1}; //array de enteros, que contiene las posiciones de la juagada ganadora
+
+        Button btn1 = (Button) findViewById(R.id.b1);
+        btn1.setText("-");
+        Button btn2 = (Button) findViewById(R.id.b2);
+        btn2.setText("-");
+        Button btn3 = (Button) findViewById(R.id.b3);
+        btn3.setText("-");
+        Button btn4 = (Button) findViewById(R.id.b4);
+        btn4.setText("-");
+        Button btn5 = (Button) findViewById(R.id.b5);
+        btn5.setText("-");
+        Button btn6 = (Button) findViewById(R.id.b6);
+        btn6.setText("-");
+        Button btn7 = (Button) findViewById(R.id.b7);
+        btn7.setText("-");
+        Button btn8 = (Button) findViewById(R.id.b8);
+        btn8.setText("-");
+        Button btn9 = (Button) findViewById(R.id.b9);
+        btn9.setText("-");
+        WinnerText.setVisibility(View.INVISIBLE);
+
+        estado = 0;
+    }
+
+    public void selectficha(View view){
         Button button = (Button) view;
         if(estado == 0){ //jugando
 
@@ -70,11 +105,11 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
                     button.setText("X");
 
                     fichas += 1;
-                    estado = comprobarEstado();
+                    estado = comprobando();
                     System.out.println("test1");
                     System.out.println(estado);
                     Log.d("msg", Integer.toString(estado));
-                    terminarPartida();
+                    over();
                     return;
                 }
                 if (turno == -1){
@@ -84,18 +119,18 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
                     button.setText("O");
 
                     fichas += 1;
-                    estado = comprobarEstado();
+                    estado = comprobando();
                     System.out.println("test2");
                     System.out.println(estado);
                     Log.d("msg", Integer.toString(estado));
-                    terminarPartida();
+                    over();
                     return;
                 }
             }
         }
     }
 
-    public int comprobarEstado(){
+    public int comprobando(){
         int nuevoEstado = 0;
         if(Math.abs(tablero[0]+tablero[1]+tablero[2])==3){
             gana = new int[]{0,1,2};
@@ -151,7 +186,24 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         return nuevoEstado;
     }
 
-    public void terminarPartida(){
+    public void nuevo(View view){
+
+        if (estado == 0) {
+            String estadistica = "Juego " + (estadisticasTresEnRaya.size() + 1) + " : Canceló";
+            estadisticasTresEnRaya.add(estadistica);
+        }
+        reiniciar();
+
+    }
+
+
+    public void openTresEnRayaEstadisticas(View view) {
+        Intent intent = new Intent(this, ActivityTresEnRayaEstadisticas.class);
+        intent.putExtra("estadisticas", estadisticasTresEnRaya);
+        startActivity(intent);
+    }
+
+    public void over(){
         if(estado == 1 || estado == -1){
             if(estado == -1){
                 WinnerText.setVisibility(View.VISIBLE);
@@ -182,61 +234,5 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         }
 
     }
-
-    public void nuevo(View view){
-
-        if (estado == 0) {
-            String estadistica = "Juego " + (estadisticasTresEnRaya.size() + 1) + " : Canceló";
-            estadisticasTresEnRaya.add(estadistica);
-        }
-        rebootGame();
-
-    }
-
-    public void rebootGame() {
-        tablero = new int[]{
-                0, 0, 0,
-                0, 0, 0,
-                0, 0, 0,
-        };
-
-        System.out.println("aqui van los botones vacios" + buttons );
-        System.out.println("aqui van los tablero vacio" + tablero );
-
-        estado = 0; //veremos que -1 cuando gana x
-        //1 cunado gana el o
-        //0 cuando hay empate
-        fichas = 0;
-        turno = 1; //indica quien coloco la ultima ficha,para determinar el ganador
-        gana = new int[]{-1,-1,-1}; //array de enteros, que contiene las posiciones de la juagada ganadora
-
-        Button btn1 = (Button) findViewById(R.id.b1);
-        btn1.setText("-");
-        Button btn2 = (Button) findViewById(R.id.b2);
-        btn2.setText("-");
-        Button btn3 = (Button) findViewById(R.id.b3);
-        btn3.setText("-");
-        Button btn4 = (Button) findViewById(R.id.b4);
-        btn4.setText("-");
-        Button btn5 = (Button) findViewById(R.id.b5);
-        btn5.setText("-");
-        Button btn6 = (Button) findViewById(R.id.b6);
-        btn6.setText("-");
-        Button btn7 = (Button) findViewById(R.id.b7);
-        btn7.setText("-");
-        Button btn8 = (Button) findViewById(R.id.b8);
-        btn8.setText("-");
-        Button btn9 = (Button) findViewById(R.id.b9);
-        btn9.setText("-");
-        WinnerText.setVisibility(View.INVISIBLE);
-
-        estado = 0;
-    }
-
-    public void openTresEnRayaEstadisticas(View view) {
-        Intent intent = new Intent(this, ActivityTresEnRayaEstadisticas.class);
-        intent.putExtra("estadisticas", estadisticasTresEnRaya);
-        startActivity(intent);
-    }*/
 
 }
