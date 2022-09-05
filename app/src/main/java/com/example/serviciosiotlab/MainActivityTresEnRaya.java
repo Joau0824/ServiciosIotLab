@@ -43,7 +43,7 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
                 R.id.b4, R.id.b5, R.id.b6,
                 R.id.b7, R.id.b8, R.id.b9,
         };
-
+        iniciar();
         Intent intent = getIntent();
         int i = intent.getIntExtra("nuevoJuego",0);
         if (i == 1) {
@@ -88,6 +88,10 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
         WinnerText.setVisibility(View.INVISIBLE);
 
         estado = 0;
+    }
+
+    public void iniciar(){
+        reiniciar();
     }
 
     public void selectficha(View view){

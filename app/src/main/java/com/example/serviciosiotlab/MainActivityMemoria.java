@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +20,7 @@ public class MainActivityMemoria extends AppCompatActivity {
 
    public ArrayList<String> memoriaEstadistica = new ArrayList<>();
    private ArrayList<Button> presionarBotones = new ArrayList<>();
-   private final int[] botones = {R.id.btna1,R.id.btnb1,R.id.btnc1,R.id.btnd1,R.id.btna2,R.id.btnb2,R.id.btnc2,R.id.btnd2,R.id.btna3,R.id.btnb3,R.id.btnc3,R.id.btnd3,R.id.btna4,R.id.btnb4,R.id.btnc4,R.id.btnd4};
+   Integer[] botones =new Integer[] {R.id.btna1,R.id.btnb1,R.id.btnc1,R.id.btnd1,R.id.btna2,R.id.btnb2,R.id.btnc2,R.id.btnd2,R.id.btna3,R.id.btnb3,R.id.btnc3,R.id.btnd3,R.id.btna4,R.id.btnb4,R.id.btnc4,R.id.btnd4};
    private int contador;
     private HashMap<Button,String> letraBoton = new HashMap<>();
    private Instant instantInicio, instantFin;
@@ -32,6 +33,7 @@ public class MainActivityMemoria extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_memoria);
         getSupportActionBar().setTitle("Inicio");
+        iniciarJuego();
         Intent intent = getIntent();
         int i = intent.getIntExtra("Nuevo Inicio",0);
         if (i == 1) {
@@ -124,7 +126,7 @@ public class MainActivityMemoria extends AppCompatActivity {
                                     boton1A.setText("-");
                                     boton1B.setText("-");
                                 }
-                            }, 500);
+                            }, 350);
                         }
                     }else {
                         presionarBotones.get(0).setText("-");
@@ -137,9 +139,25 @@ public class MainActivityMemoria extends AppCompatActivity {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         instantFin = Instant.now();
                     }
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        long seconds = instantFin.getEpochSecond() - instantInicio.getEpochSecond();
+
+//                        if (seconds < 60){
+                        String tiempoJuego = "Terminó en " + Math.round((seconds/60.0)*100.0)/100.0 + " minutos";
+
+                        String estadisticas = "Juego " + (memoriaEstadistica.size() + 1) + " : " + tiempoJuego;
+                        memoriaEstadistica.add(estadisticas);
+
+                        TextView cronometro = (TextView) findViewById(R.id.mostrarTiempo);
+                        cronometro.setText(tiempoJuego);
+                    }
                 }
             }
         }
+    }
+
+    public void iniciarJuego(){
+        cargarletras();
     }
 
     public void reiniciarJuego(View view){

@@ -304,7 +304,7 @@
         android:id="@+id/btn_nuevoMem3"
         android:layout_width="169dp"
         android:layout_height="60dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="508dp"
         android:backgroundTint="#916AD6"
         android:fontFamily="casual"
         android:onClick="reiniciarJuego"
