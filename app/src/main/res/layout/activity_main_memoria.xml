@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <Button
+        android:id="@+id/btn_StatsMem3"
+        android:layout_width="169dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="#916AD6"
+        android:fontFamily="casual"
+        android:onClick="abrirMemoStats"
+        android:text="Estadísticas"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_nuevoMem3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#916AD6"
+        app:layout_constraintEnd_toEndOf="@+id/textMemoria"
+        app:layout_constraintStart_toStartOf="@+id/textMemoria"
+        app:layout_constraintTop_toBottomOf="@+id/textMemoria">
+
+        <Button
+            android:id="@+id/btna1"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnb1"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnc1"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnd1"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#916AD6"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/btna2"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnb2"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnc2"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnd2"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#916AD6"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <Button
+            android:id="@+id/btna4"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnb4"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnc4"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnd4"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#916AD6"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <Button
+            android:id="@+id/btna3"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnb3"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnc3"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnd3"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#916AD6"
+            android:onClick="extraerLetraBoton"
+            android:text="-"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textMemoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Memoria"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/btn_nuevoMem3"
+        android:layout_width="169dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="520dp"
+        android:backgroundTint="#916AD6"
+        android:fontFamily="casual"
+        android:onClick="rebootJuego"
+        android:text="Nuevo"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
