@@ -22,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("AppsIoT - Lab 1");
+    }
+
+    public void openMemoria(View view) {
+        Intent intent = new Intent(this, MainActivityMemoria.class);
+        startActivity(intent);
+    }
+
+    public void openTresEnRaya(View view) {
+        Intent intent = new Intent(this, MainActivityTresEnRaya.class);
+        startActivity(intent);
     }
 
 
