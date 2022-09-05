@@ -3,21 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/drawable-anydpi/ic_action_A.xml" value="0.142" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/drawable-anydpi/ic_action_B.xml" value="0.142" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/drawable-anydpi/ic_action_C.xml" value="0.142" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main2.xml" value="0.22" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main_inicio.xml" value="0.33" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main_memoria.xml" value="0.2717391304347826" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/estadisticas.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Joau_/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/tres_en_raya.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Labtel/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Labtel/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/activity_main2.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/Labtel/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/estadisticas.xml" value="0.33" />
         <entry key="..\:/Users/Labtel/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/memoria1.xml" value="0.5" />
         <entry key="..\:/Users/Labtel/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/layout/tres_en_raya.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/Labtel/AndroidStudioProjects/ServiciosIotLab/app/src/main/res/menu/menu_main.xml" value="0.5" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_action_A.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.29257246376811596" />
         <entry key="app/src/main/res/layout/activity_main_inicio.xml" value="0.375" />
