@@ -1,5 +1,8 @@
 package com.example.serviciosiotlab;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +41,9 @@ public class MainActivityMemoria extends AppCompatActivity {
     }
 
     private void cargarletras(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            instantInicio = Instant.now();
+        }
 
         ArrayList<String> letras = new ArrayList<>();
         letras.add("A");
@@ -89,9 +95,8 @@ public class MainActivityMemoria extends AppCompatActivity {
             Button boton1 = (Button) view;
             String letraBTN = letraBoton.get(boton1);
 
-            if (letraBoton == null) {
-                presionarBotones.get(0).setText("-");
-            } else {
+            if (letraBoton != null) {
+
                 presionarBotones.add(boton1);
                 boton1.setText(String.valueOf(letraBTN));
                 contador++;
@@ -121,9 +126,35 @@ public class MainActivityMemoria extends AppCompatActivity {
                                 }
                             }, 500);
                         }
+                    }else {
+                        presionarBotones.get(0).setText("-");
+
+                    }
+                    presionarBotones.clear();
+                    contador=0;
+                }
+                if(letraBoton.size()==0){
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        instantFin = Instant.now();
                     }
                 }
             }
         }
     }
+
+    public void reiniciarJuego(View view){
+
+        if(letraBoton.size() != 0){
+            String estadisticas = "Juego " + (memoriaEstadistica.size() + 1) + " : " + "Canceló";
+            memoriaEstadistica.add(estadisticas);
+        }
+        cargarletras();
+    }
+
+    public void abrirEstadisticas(View view) {
+        Intent intent = new Intent(this, ActivityMemoriaEstadisticas.class);
+        intent.putExtra("estadisticas", memoriaEstadistica);
+        startActivity(intent);
+    }
+
 }

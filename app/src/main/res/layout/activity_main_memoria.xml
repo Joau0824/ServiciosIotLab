@@ -24,11 +24,12 @@
         android:layout_marginBottom="64dp"
         android:backgroundTint="#916AD6"
         android:fontFamily="casual"
-        android:onClick="openMemoriaEstadisticas"
+        android:onClick="abrirEstadisticas"
         android:text="Estadísticas"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_nuevoMem3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btn_nuevoMem3"
         app:layout_constraintTop_toBottomOf="@+id/btn_nuevoMem3"
         app:layout_constraintVertical_bias="1.0" />
@@ -52,7 +53,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -65,7 +66,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="14dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -78,7 +79,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="14dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -91,7 +92,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
     </LinearLayout>
@@ -114,7 +115,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="14dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -127,7 +128,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -140,7 +141,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="14dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -153,7 +154,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp"
             tools:ignore="DuplicateSpeakableTextCheck" />
@@ -178,7 +179,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -191,7 +192,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -204,7 +205,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -217,7 +218,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -242,7 +243,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -255,7 +256,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -268,7 +269,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="14dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
 
@@ -281,7 +282,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="7dp"
             android:backgroundTint="#916AD6"
-            android:onClick="extraerLetraBoton"
+            android:onClick="colocarletra"
             android:text="-"
             android:textSize="24sp" />
     </LinearLayout>
@@ -303,10 +304,10 @@
         android:id="@+id/btn_nuevoMem3"
         android:layout_width="169dp"
         android:layout_height="60dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="508dp"
         android:backgroundTint="#916AD6"
         android:fontFamily="casual"
-        android:onClick="rebootJuego"
+        android:onClick="reiniciarJuego"
         android:text="Nuevo"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
