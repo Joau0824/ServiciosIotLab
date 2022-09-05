@@ -22,12 +22,12 @@ public class MainActivityTresEnRaya extends AppCompatActivity {
             0, 0, 0,
     };
 
+    public ArrayList<String> estadisticasTresEnRaya = new ArrayList();
+
     int estado = 10; //-1 -> gana x; 1 -> gana O; 0 -> empate
     int fichas = 0;
     int turno = 1; //quien coloco la ultima ficha
-    int[] gana = new int[]{-1,-1,-1}; //array de enteros, que conteiene las posiciones de la jugada ganadora
-
-    public ArrayList<String> estadisticasTresEnRaya = new ArrayList();
+    int[] gana = new int[]{-1,-1,-1};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
